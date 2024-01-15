@@ -1,3 +1,9 @@
+/*
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructura de Datos – sección 40
+ * Roberto Barreda – 23354 | Lingna Chen - 23173
+ */
+
 import java.util.HashMap;
 import java.util.Map;
 
