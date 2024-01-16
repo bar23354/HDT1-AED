@@ -26,14 +26,13 @@ class Radio implements IRadio {
 
     @Override
     public void saveStation(int buttonId, double station) {
-        if (am && station >= 530 && station <= 1610) {
+        if ((am && station >= 530.0 && station <= 1610.0) || (!am && station >= 87.9 && station <= 107.9)) {
             savedStations.put(buttonId, station);
-        } else if (!am && station >= 87.9 && station <= 107.9) {
-            savedStations.put(buttonId, station);
+            System.out.println("Estación guardada en el botón: " + buttonId);
         } else {
-            System.out.println("La estación no está en el rango permitido.");
+            System.out.println("La estación no está en el rango permitido para " + (am ? "AM" : "FM"));
         }
-    }
+    }    
 
     @Override
     public boolean isAM() {
@@ -47,8 +46,14 @@ class Radio implements IRadio {
 
     @Override
     public double selectStation(int buttonId) {
-        return savedStations.getOrDefault(buttonId, 0.0);
-    }
+        double selectedStation = savedStations.getOrDefault(buttonId, 0.0);
+        if (selectedStation > 0) {
+            System.out.println("Seleccione la estación: " + selectedStation);
+        } else {
+            System.out.println("No hay una estación guardada en el botón: " + buttonId);
+        }
+        return selectedStation;
+    }      
 
     @Override
     public void switchOnOff() {

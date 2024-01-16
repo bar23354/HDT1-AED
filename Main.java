@@ -65,7 +65,7 @@ public class Main {
                                 scanner.next();
                                 continue;
                             }
-
+                    
                             System.out.println("Ingrese la frecuencia de la estación: ");
                             double station = 0.0;
                             try {
@@ -75,13 +75,13 @@ public class Main {
                                 scanner.next();
                                 continue;
                             }
-
+                    
                             radio.saveStation(buttonId, station);
-                            System.out.println("Estación guardada en el botón: " + buttonId);
                         } else {
                             System.out.println("La radio está apagada. Enciéndala para guardar una estación.");
                         }
                         break;
+                    
                     case 5:
                         if (radio.isOn()) {
                             System.out.println("ID del botón (1-12): ");
@@ -93,7 +93,7 @@ public class Main {
                                 scanner.next();
                                 continue;
                             }
-
+                    
                             double selectedStation = radio.selectStation(selectedButton);
                             if (selectedStation > 0) {
                                 System.out.println("Seleccione la estación: " + selectedStation);
@@ -104,6 +104,7 @@ public class Main {
                             System.out.println("La radio está apagada. Enciéndala para seleccionar una estación.");
                         }
                         break;
+                    
                     case 6:
                         System.out.println("Saliendo del programa.");
                         System.exit(0);
