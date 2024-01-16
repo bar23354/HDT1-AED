@@ -3,6 +3,10 @@
  * Algoritmos y Estructura de Datos – sección 40
  * Roberto Barreda – 23354 | Lingna Chen - 23173
  */
+ 
+/**
+ * Implementación de la interfaz IRadio que representa un objeto de radio.
+ */
 
 import java.util.HashMap;
 import java.util.Map;

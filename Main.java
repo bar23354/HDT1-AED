@@ -6,7 +6,9 @@
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+/**
+ * Clase principal que contiene el método main para ejecutar la aplicación de la radio.
+ */
 public class Main {
     public static void main(String[] args) {
         IRadio radio = new Radio();
